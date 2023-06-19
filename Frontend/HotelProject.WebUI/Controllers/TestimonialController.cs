@@ -5,15 +5,11 @@ using System.Text;
 
 namespace HotelProject.WebUI.Controllers
 {
-    public class StaffController : Controller
+    public class TestimonialController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public StaffController(IHttpClientFactory httpClientFactory)
-        {
-            _httpClientFactory = httpClientFactory;
-        }
-
+      
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
@@ -37,7 +33,7 @@ namespace HotelProject.WebUI.Controllers
         {
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(addStaffViewModel);
-            StringContent stringContent = new StringContent(jsonData,Encoding.UTF8,"application/json");
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PostAsync("http://localhost:5107/api/Staff", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
@@ -76,14 +72,13 @@ namespace HotelProject.WebUI.Controllers
         {
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(model);
-            StringContent stringContent = new StringContent(jsonData,Encoding.UTF8,"application/json");
-            var responseMessage = await client.PutAsync("http://localhost:5107/api/Staff/",stringContent);
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await client.PutAsync("http://localhost:5107/api/Staff/", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
             }
             return View();
         }
-
     }
 }
