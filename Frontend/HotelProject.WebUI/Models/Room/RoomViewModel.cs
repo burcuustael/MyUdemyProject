@@ -1,7 +1,8 @@
-﻿namespace HotelProject.WebUI.Dtos.RoomDto
+﻿namespace HotelProject.WebUI.Models.Room
 {
-    public class CreateRoomDto
+    public class RoomViewModel
     {
+        public int Id { get; set; }
         public string? RoomNumber { get; set; }
         public string? RoomCoverImage { get; set; }
         public int? Price { get; set; }

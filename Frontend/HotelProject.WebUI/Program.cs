@@ -1,5 +1,9 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.EntityLayer.Concrete;
+using HotelProject.WebUI.Dtos.GuestDto;
+using HotelProject.WebUI.ValidationRules.GuestValidationRules;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
 builder.Services.AddHttpClient();
-builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<IValidator<CreateGuestDto>,GuestCreateValidatior>();
+builder.Services.AddTransient<IValidator<UpdateGuestDto>,UpdateGuestValidatior>();
+builder.Services.AddControllersWithViews().AddFluentValidation();
 builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
@@ -18,7 +24,7 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
 }
 app.UseStaticFiles();
-
+app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseAuthorization();
