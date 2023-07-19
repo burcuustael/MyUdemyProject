@@ -1,4 +1,5 @@
 ﻿@model UpdateRoomDto
+
 @{
     ViewData["Title"] = "UpdateRoom";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
@@ -25,6 +26,8 @@
     <label>Oda Kapak Fotoğrafı</label>
     <input type="text" asp-for="RoomCoverImage" class="form-control" />
     <br />
+    <label>WİFİ</label>
+    <input type="text" asp-for="Wifi" class="form-control" />
     <label>Açıklama</label>
     <input type="text" asp-for="Description" class="form-control" />
     <br />
