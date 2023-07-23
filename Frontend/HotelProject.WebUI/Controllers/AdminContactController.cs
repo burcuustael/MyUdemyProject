@@ -93,7 +93,7 @@ namespace HotelProject.WebUI.Controllers
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<InboxContactDto>(jsonData);
+                var values = JsonConvert.DeserializeObject<MessageDetailsByInboxDto>(jsonData);
                 return View(values);
             }
             return View();

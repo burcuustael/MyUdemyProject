@@ -1,0 +1,4 @@
+Tüm boş zamanı alan adım adım ilerlediğim Backand developer olma yolunda sn Murat Yücedağ hocamızın Asp.Net Core 5.0 ile Adım Adım Web Geliştirme
+kursunu bitirdim benim için yeni şeyler öğrendiğim öğrenme hevesimi arttıran bir eğitim oldu çok teşekkür ederim hocam.
+Ben projeyi Asp.Net Core 7.0 ile yazdım proje ile ilgili videoda sadece test içerikleri girili ve yakın zamanda projenin uı katmanını değiştirip canlıya almayı plalıyorum. Canlıya aldığımda projeyi daha detaylı açıkladığım bir video ile paylaşmayı planlıyorum.
+Projenin linki : https://lnkd.in/dk-bQAzd
