@@ -1,5 +1,4 @@
 ﻿using HotelProject.WebUI.Dtos.RoomDto;
-using HotelProject.WebUI.Models.Room;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
@@ -18,7 +17,7 @@ namespace HotelProject.WebUI.Controllers
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:5107/api/MessageCategory");
+            var responseMessage = await client.GetAsync("http://localhost:5107/api/Room");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
