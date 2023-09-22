@@ -6,7 +6,6 @@
 }
 
 <div class="email-left-box">
-    <a href="/AdminContact/AddSendMessage/" class="btn btn-primary btn-block">Yeni Mesaj Oluştur</a>
 
     @await Html.PartialAsync("SidebarAdminContactPartial")
 
@@ -14,6 +13,7 @@
 
     @await Html.PartialAsync("SidebarAdminContactCategoryPartial")
 </div>
+
 <div class="email-right-box">
     <div role="toolbar" class="toolbar">
         <div class="btn-group">
@@ -42,8 +42,5 @@
     <p>@Model.Content </p>
 
     </div>
-    <hr>
-    <div class="form-group p-t-15">
-        <textarea class="w-100 p-20 l-border-1" name="" id="" cols="30" rows="5" placeholder="It's really an amazing.I want to know more about it..!"></textarea>
-    </div>
+
 </div>

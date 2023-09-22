@@ -8,7 +8,7 @@ namespace HotelProject.DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-KOJI8U6;database=ApiDb;integrated security=true;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer(@"Server=BURCU;database=ApiDb;integrated security=true;TrustServerCertificate=True");
             base.OnConfiguring(optionsBuilder);
 
         }
